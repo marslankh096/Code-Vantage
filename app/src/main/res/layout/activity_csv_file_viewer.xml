@@ -1,0 +1,755 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/csvbgcolor"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/toplayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/backBtn"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:src="@drawable/back_icn"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:textSize="@dimen/_14sdp"
+            android:textColor="@color/black"
+            android:id="@+id/sImgTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/csvfileviewer"
+            android:layout_toRightOf="@+id/backBtn"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/rock"
+            android:layout_marginStart="@dimen/_10sdp" />
+
+        <ImageView
+            android:id="@+id/btn_Search"
+            android:visibility="gone"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:src="@drawable/ic_search_white_24dp"
+            android:actionViewClass="androidx.appcompat.widget.SearchView"
+            android:layout_marginEnd="@dimen/_8sdp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_alignParentEnd="true">
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutShare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp">
+
+                <RelativeLayout
+                    android:id="@+id/btn_Share"
+                    android:background="@drawable/circlebg"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_centerHorizontal="true">
+
+                    <ImageView
+                        android:id="@+id/btnshare"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:src="@drawable/share_icn"
+                        android:layout_centerInParent="true" />
+                </RelativeLayout>
+
+                <TextView
+                    android:textSize="@dimen/_10sdp"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/share_file"
+                    android:layout_below="@+id/btn_Share"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/robotomedium" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/relativeLayoutShare"
+                android:layout_marginStart="@dimen/_5sdp">
+
+                <RelativeLayout
+                    android:id="@+id/btn_Newfile"
+                    android:background="@drawable/circlebg"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_centerHorizontal="true">
+
+                    <ImageView
+                        android:id="@+id/btnNewfile"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:src="@drawable/newfileicn"
+                        android:layout_centerInParent="true" />
+                </RelativeLayout>
+
+                <TextView
+                    android:textSize="@dimen/_10sdp"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/newfile"
+                    android:layout_below="@+id/btn_Newfile"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/robotomedium" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/menu_bar_holder"
+        android:layout_below="@+id/toplayout"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardElevation="5dp"
+        app:cardMaxElevation="2dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:id="@+id/relativelayoutfirst"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/relativelayoutone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/csvimg"
+                    android:layout_width="@dimen/_24sdp"
+                    android:layout_height="@dimen/_24sdp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:src="@drawable/icon200" />
+
+                <TextView
+                    android:textSize="@dimen/_14sdp"
+                    android:textColor="@color/black"
+                    android:id="@+id/txttitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/btn_Refresh"
+                    android:layout_toRightOf="@+id/csvimg"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_10sdp" />
+
+                <ImageView
+                    android:id="@+id/btn_Refresh"
+                    android:visibility="visible"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:src="@drawable/refresh_icn"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/table_holder"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_below="@+id/relativelayoutone" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/menu_bar_holder"
+        android:background="@color/csvbgcolor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp">
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <!--                    <RelativeLayout-->
+                    <!--                        android:id="@+id/relativeLayoutCopycell"-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_marginEnd="@dimen/_5sdp">-->
+
+                    <!--                        <RelativeLayout-->
+                    <!--                            android:id="@+id/relbtnCell"-->
+                    <!--                            android:background="@drawable/circlebg"-->
+                    <!--                            android:layout_width="@dimen/_40sdp"-->
+                    <!--                            android:layout_height="@dimen/_40sdp"-->
+                    <!--                            android:layout_centerHorizontal="true">-->
+
+                    <!--                            <ImageView-->
+                    <!--                                android:id="@+id/btn_Cell"-->
+                    <!--                                android:layout_width="@dimen/_30sdp"-->
+                    <!--                                android:layout_height="@dimen/_30sdp"-->
+                    <!--                                android:src="@drawable/copy_cell_icn"-->
+                    <!--                                android:layout_centerInParent="true" />-->
+                    <!--                        </RelativeLayout>-->
+
+                    <!--                        <TextView-->
+                    <!--                            android:textSize="@dimen/_10sdp"-->
+                    <!--                            android:textColor="@color/black"-->
+                    <!--                            android:layout_width="wrap_content"-->
+                    <!--                            android:layout_height="wrap_content"-->
+                    <!--                            android:text="@string/menu_copy_cell"-->
+                    <!--                            android:layout_below="@+id/relbtnCell"-->
+                    <!--                            android:layout_centerHorizontal="true"-->
+                    <!--                            android:fontFamily="@font/robotomedium" />-->
+                    <!--                    </RelativeLayout>-->
+
+                    <!--                    <RelativeLayout-->
+                    <!--                        android:id="@+id/relativeLayoutCopyrow"-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_marginStart="@dimen/_5sdp"-->
+                    <!--                        android:layout_marginEnd="@dimen/_5sdp">-->
+
+                    <!--                        <RelativeLayout-->
+                    <!--                            android:id="@+id/relbtnrowCell"-->
+                    <!--                            android:background="@drawable/circlebg"-->
+                    <!--                            android:layout_width="@dimen/_40sdp"-->
+                    <!--                            android:layout_height="@dimen/_40sdp"-->
+                    <!--                            android:layout_centerHorizontal="true">-->
+
+                    <!--                            <ImageView-->
+                    <!--                                android:id="@+id/btn_rowCell"-->
+                    <!--                                android:layout_width="@dimen/_30sdp"-->
+                    <!--                                android:layout_height="@dimen/_30sdp"-->
+                    <!--                                android:src="@drawable/copy_row_icn"-->
+                    <!--                                android:layout_centerInParent="true" />-->
+                    <!--                        </RelativeLayout>-->
+
+                    <!--                        <TextView-->
+                    <!--                            android:textSize="@dimen/_10sdp"-->
+                    <!--                            android:textColor="@color/black"-->
+                    <!--                            android:layout_width="wrap_content"-->
+                    <!--                            android:layout_height="wrap_content"-->
+                    <!--                            android:text="@string/menu_copy_row"-->
+                    <!--                            android:layout_below="@+id/relbtnrowCell"-->
+                    <!--                            android:layout_centerHorizontal="true"-->
+                    <!--                            android:fontFamily="@font/robotomedium" />-->
+                    <!--                    </RelativeLayout>-->
+
+                    <!--                    <RelativeLayout-->
+                    <!--                        android:id="@+id/relativeLayoutCopycolumn"-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_marginStart="@dimen/_5sdp"-->
+                    <!--                        android:layout_marginEnd="@dimen/_5sdp">-->
+
+                    <!--                        <RelativeLayout-->
+                    <!--                            android:id="@+id/relbtncolumnCell"-->
+                    <!--                            android:background="@drawable/circlebg"-->
+                    <!--                            android:layout_width="@dimen/_40sdp"-->
+                    <!--                            android:layout_height="@dimen/_40sdp"-->
+                    <!--                            android:layout_centerHorizontal="true">-->
+
+                    <!--                            <ImageView-->
+                    <!--                                android:id="@+id/btn_columnCell"-->
+                    <!--                                android:layout_width="@dimen/_30sdp"-->
+                    <!--                                android:layout_height="@dimen/_30sdp"-->
+                    <!--                                android:src="@drawable/copy_column_icn"-->
+                    <!--                                android:layout_centerInParent="true" />-->
+                    <!--                        </RelativeLayout>-->
+
+                    <!--                        <TextView-->
+                    <!--                            android:textSize="@dimen/_10sdp"-->
+                    <!--                            android:textColor="@color/black"-->
+                    <!--                            android:layout_width="wrap_content"-->
+                    <!--                            android:layout_height="wrap_content"-->
+                    <!--                            android:text="@string/menu_copy_column"-->
+                    <!--                            android:layout_below="@+id/relbtncolumnCell"-->
+                    <!--                            android:layout_centerHorizontal="true"-->
+                    <!--                            android:fontFamily="@font/robotomedium" />-->
+                    <!--                    </RelativeLayout>-->
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayoutlinenumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp">
+
+                        <RelativeLayout
+                            android:id="@+id/relbtnlinenumber"
+                            android:background="@drawable/circlebg"
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_centerHorizontal="true">
+
+                            <ImageView
+                                android:id="@+id/btn_linenumber"
+                                android:layout_width="@dimen/_30sdp"
+                                android:layout_height="@dimen/_30sdp"
+                                android:src="@drawable/line_number_icn"
+                                android:layout_centerInParent="true" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:textSize="@dimen/_10sdp"
+                            android:textColor="@color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/menu_line_number"
+                            android:layout_below="@+id/relbtnlinenumber"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/robotomedium" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayoutscrolltop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp">
+
+                        <RelativeLayout
+                            android:id="@+id/relbtnscrolltop"
+                            android:background="@drawable/circlebg"
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_centerHorizontal="true">
+
+                            <ImageView
+                                android:id="@+id/btn_scrolltop"
+                                android:layout_width="@dimen/_30sdp"
+                                android:layout_height="@dimen/_30sdp"
+                                android:src="@drawable/scroll_top_icn"
+                                android:layout_centerInParent="true" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:textSize="@dimen/_10sdp"
+                            android:textColor="@color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/menu_scroll_top"
+                            android:layout_below="@+id/relbtnscrolltop"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/robotomedium" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayoutscrollbottom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp">
+
+                        <RelativeLayout
+                            android:id="@+id/relbtncrollbottom"
+                            android:background="@drawable/circlebg"
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_centerHorizontal="true">
+
+                            <ImageView
+                                android:id="@+id/btn_scrollbottom"
+                                android:layout_width="@dimen/_30sdp"
+                                android:layout_height="@dimen/_30sdp"
+                                android:src="@drawable/scroll_bottom_icn"
+                                android:layout_centerInParent="true" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:textSize="@dimen/_10sdp"
+                            android:textColor="@color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/menu_scroll_bottom"
+                            android:layout_below="@+id/relbtncrollbottom"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/robotomedium" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayoutscrollto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp">
+
+                        <RelativeLayout
+                            android:id="@+id/relbtnscrollto"
+                            android:background="@drawable/circlebg"
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_centerHorizontal="true">
+
+                            <ImageView
+                                android:id="@+id/btn_scrollto"
+                                android:layout_width="@dimen/_30sdp"
+                                android:layout_height="@dimen/_30sdp"
+                                android:src="@drawable/scroll_position_icn"
+                                android:layout_centerInParent="true" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:textSize="@dimen/_10sdp"
+                            android:textColor="@color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/menu_scroll_to"
+                            android:layout_below="@+id/relbtnscrollto"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/robotomedium" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayouttext_size"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp">
+
+                        <RelativeLayout
+                            android:id="@+id/relbtntext_size"
+                            android:background="@drawable/circlebg"
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_centerHorizontal="true">
+
+                            <ImageView
+                                android:id="@+id/btn_text_size"
+                                android:layout_width="@dimen/_30sdp"
+                                android:layout_height="@dimen/_30sdp"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/text_size_icn" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:textSize="@dimen/_10sdp"
+                            android:textColor="@color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/menu_text_size"
+                            android:layout_below="@+id/relbtntext_size"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/robotomedium" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayouttext_alignment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp">
+
+                        <RelativeLayout
+                            android:id="@+id/relbtntext_alignment"
+                            android:background="@drawable/circlebg"
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_centerHorizontal="true">
+
+                            <ImageView
+                                android:id="@+id/btn_text_alignment"
+                                android:layout_width="@dimen/_30sdp"
+                                android:layout_height="@dimen/_30sdp"
+                                android:src="@drawable/text_size_icn"
+                                android:layout_centerInParent="true" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:textSize="@dimen/_10sdp"
+                            android:textColor="@color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/menu_text_alignment"
+                            android:layout_below="@+id/relbtntext_alignment"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/robotomedium" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayouttext_color"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp">
+
+                        <RelativeLayout
+                            android:id="@+id/relbtntext_color"
+                            android:background="@drawable/circlebg"
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_centerHorizontal="true">
+
+                            <ImageView
+                                android:id="@+id/btn_text_color"
+                                android:layout_width="@dimen/_30sdp"
+                                android:layout_height="@dimen/_30sdp"
+                                android:src="@drawable/text_color_icn"
+                                android:layout_centerInParent="true" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:textSize="@dimen/_10sdp"
+                            android:textColor="@color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/menu_text_color"
+                            android:layout_below="@+id/relbtntext_color"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/robotomedium" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayouttext_font"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp">
+
+                        <RelativeLayout
+                            android:id="@+id/relbtntext_font"
+                            android:background="@drawable/circlebg"
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_centerHorizontal="true">
+
+                            <ImageView
+                                android:id="@+id/btn_text_font"
+                                android:layout_width="@dimen/_30sdp"
+                                android:layout_height="@dimen/_30sdp"
+                                android:src="@drawable/text_fontstyles_icn"
+                                android:layout_centerInParent="true" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:textSize="@dimen/_10sdp"
+                            android:textColor="@color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/menu_text_font"
+                            android:layout_below="@+id/relbtntext_font"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/robotomedium" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayouttext_background"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp">
+
+                        <RelativeLayout
+                            android:id="@+id/relbtntext_background"
+                            android:background="@drawable/circlebg"
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_centerHorizontal="true">
+
+                            <ImageView
+                                android:id="@+id/btn_text_background"
+                                android:layout_width="@dimen/_30sdp"
+                                android:layout_height="@dimen/_30sdp"
+                                android:src="@drawable/bg_color_icn"
+                                android:layout_centerInParent="true" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:textSize="@dimen/_10sdp"
+                            android:textColor="@color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/menu_background"
+                            android:layout_below="@+id/relbtntext_background"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/robotomedium" />
+                    </RelativeLayout>
+
+                    <!--                    <RelativeLayout-->
+                    <!--                        android:id="@+id/relativeLayouttext_cellhighlight"-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_marginStart="@dimen/_5sdp"-->
+                    <!--                        android:layout_marginEnd="@dimen/_5sdp">-->
+
+                    <!--                        <RelativeLayout-->
+                    <!--                            android:id="@+id/relbtntext_cellhighlight"-->
+                    <!--                            android:background="@drawable/circlebg"-->
+                    <!--                            android:layout_width="@dimen/_40sdp"-->
+                    <!--                            android:layout_height="@dimen/_40sdp"-->
+                    <!--                            android:layout_centerHorizontal="true">-->
+
+                    <!--                            <ImageView-->
+                    <!--                                android:id="@+id/btn_text_cellhighlight"-->
+                    <!--                                android:layout_width="@dimen/_30sdp"-->
+                    <!--                                android:layout_height="@dimen/_30sdp"-->
+                    <!--                                android:layout_centerInParent="true"-->
+                    <!--                                android:src="@drawable/cell_highlight_icn" />-->
+                    <!--                        </RelativeLayout>-->
+
+                    <!--                        <TextView-->
+                    <!--                            android:textSize="@dimen/_10sdp"-->
+                    <!--                            android:textColor="@color/black"-->
+                    <!--                            android:layout_width="wrap_content"-->
+                    <!--                            android:layout_height="wrap_content"-->
+                    <!--                            android:text="@string/menu_highlight"-->
+                    <!--                            android:layout_below="@+id/relbtntext_cellhighlight"-->
+                    <!--                            android:layout_centerHorizontal="true"-->
+                    <!--                            android:fontFamily="@font/robotomedium" />-->
+                    <!--                    </RelativeLayout>-->
+
+                    <!--                    <RelativeLayout-->
+                    <!--                        android:id="@+id/relativeLayouttext_removecellhighlight"-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_marginStart="@dimen/_5sdp"-->
+                    <!--                        android:layout_marginEnd="@dimen/_5sdp">-->
+
+                    <!--                        <RelativeLayout-->
+                    <!--                            android:id="@+id/relbtntext_removecellhighlight"-->
+                    <!--                            android:background="@drawable/circlebg"-->
+                    <!--                            android:layout_width="@dimen/_40sdp"-->
+                    <!--                            android:layout_height="@dimen/_40sdp"-->
+                    <!--                            android:layout_centerHorizontal="true">-->
+
+                    <!--                            <ImageView-->
+                    <!--                                android:id="@+id/btn_text_removecellhighlight"-->
+                    <!--                                android:layout_width="@dimen/_30sdp"-->
+                    <!--                                android:layout_height="@dimen/_30sdp"-->
+                    <!--                                android:layout_centerInParent="true"-->
+                    <!--                                android:src="@drawable/remove_highlight_icn" />-->
+                    <!--                        </RelativeLayout>-->
+
+                    <!--                        <TextView-->
+                    <!--                            android:textSize="@dimen/_10sdp"-->
+                    <!--                            android:textColor="@color/black"-->
+                    <!--                            android:layout_width="wrap_content"-->
+                    <!--                            android:layout_height="wrap_content"-->
+                    <!--                            android:text="@string/menu_remove_highlight"-->
+                    <!--                            android:layout_below="@+id/relbtntext_removecellhighlight"-->
+                    <!--                            android:layout_centerHorizontal="true"-->
+                    <!--                            android:fontFamily="@font/robotomedium" />-->
+                    <!--                    </RelativeLayout>-->
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayouttext_Save"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp">
+
+                        <RelativeLayout
+                            android:id="@+id/relbtntext_Save"
+                            android:background="@drawable/circlebg"
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_centerHorizontal="true">
+
+                            <ImageView
+                                android:id="@+id/btn_Save"
+                                android:layout_width="@dimen/_30sdp"
+                                android:layout_height="@dimen/_30sdp"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/save_icn" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:textSize="@dimen/_10sdp"
+                            android:textColor="@color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/savefile"
+                            android:layout_below="@+id/relbtntext_Save"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/robotomedium" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/progress_indicator"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_centerInParent="true">
+
+        <ProgressBar
+            android:layout_gravity="center"
+            android:id="@+id/progress_spinner"
+            android:background="@drawable/circle_white"
+            android:padding="20dp"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            style="?android:attr/progressBarStyleSmall" />
+
+        <TextView
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textStyle="italic|bold"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:id="@+id/progress_percentage"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp" />
+
+        <TextView
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textStyle="italic|bold"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:id="@+id/progress_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</RelativeLayout>

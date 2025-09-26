@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="ad_banner_height">@dimen/_55sdp</dimen>
+    <dimen name="ad_native_height">@dimen/_220sdp</dimen>
+    <dimen name="ad_side_margin">@dimen/_5sdp</dimen>
+    <dimen name="ad_margin_below">@dimen/_8sdp</dimen>
+    <dimen name="setting_rel_height">@dimen/_45sdp</dimen>
+    <dimen name="setting_text_size_title">@dimen/_13sdp</dimen>
+    <dimen name="setting_text_margin_left">@dimen/_15sdp</dimen>
+    <dimen name="setting_view_height">0.5dp</dimen>
+    <dimen name="eu_dialog_margin_left">@dimen/_8sdp</dimen>
+    <dimen name="eu_dialog_margin_right">@dimen/_8sdp</dimen>
+    <dimen name="eu_dialog_button_height">@dimen/_35sdp</dimen>
+    <dimen name="eu_dialog_button_margin_left">@dimen/_15sdp</dimen>
+    <dimen name="eu_dialog_button_margin_right">@dimen/_15sdp</dimen>
+    <dimen name="cell_height">40dp</dimen>
+    <dimen name="text_size">12sp</dimen>
+    <dimen name="row_header_width">55dp</dimen>
+</resources>

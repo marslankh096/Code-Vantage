@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:cardElevation="5dp"
+        app:cardMaxElevation="2dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:padding="@dimen/_8sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="@dimen/_14sdp"
+                android:textColor="@color/black"
+                android:id="@+id/txtlinenumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="@string/prompt_text_font"
+                android:fontFamily="@font/rock"
+                android:layout_marginStart="@dimen/_10sdp" />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutArial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:layout_below="@+id/txtlinenumber"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_alignParentStart="true">
+
+                <ImageView
+                    android:id="@+id/btncheckedArial"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:src="@drawable/checkbox_h_icn"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/black"
+                    android:id="@+id/txtArial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/arial"
+                    android:layout_toRightOf="@+id/btncheckedArial"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/robotomedium"
+                    android:layout_marginStart="@dimen/_10sdp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutBaskerville"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_below="@+id/relativeLayoutArial"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_alignParentStart="true">
+
+                <ImageView
+                    android:id="@+id/btnuncheckedBaskerville"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:src="@drawable/checkbox_icn"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="#6f7d87"
+                    android:id="@+id/txtBaskerville"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/baskerville"
+                    android:layout_toRightOf="@+id/btnuncheckedBaskerville"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/robotomedium"
+                    android:layout_marginStart="@dimen/_10sdp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutBookmanOldStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_below="@+id/relativeLayoutBaskerville"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_alignParentStart="true">
+
+                <ImageView
+                    android:id="@+id/btnuncheckedBookmanOldStyle"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:src="@drawable/checkbox_icn"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="#6f7d87"
+                    android:id="@+id/txtBookmanOldStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bookman"
+                    android:layout_toRightOf="@+id/btnuncheckedBookmanOldStyle"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/robotomedium"
+                    android:layout_marginStart="@dimen/_10sdp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutCalibri"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_below="@+id/relativeLayoutBookmanOldStyle"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_alignParentStart="true">
+
+                <ImageView
+                    android:id="@+id/btnuncheckedCalibri"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:src="@drawable/checkbox_icn"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="#6f7d87"
+                    android:id="@+id/txtCalibri"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/calibri"
+                    android:layout_toRightOf="@+id/btnuncheckedCalibri"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/robotomedium"
+                    android:layout_marginStart="@dimen/_10sdp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutGaramond"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_below="@+id/relativeLayoutCalibri"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_alignParentStart="true">
+
+                <ImageView
+                    android:id="@+id/btnuncheckedGaramond"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:src="@drawable/checkbox_icn"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="#6f7d87"
+                    android:id="@+id/txtGaramond"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/garamond"
+                    android:layout_toRightOf="@+id/btnuncheckedGaramond"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/robotomedium"
+                    android:layout_marginStart="@dimen/_10sdp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutGeorgia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_below="@+id/relativeLayoutGaramond"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_alignParentStart="true">
+
+                <ImageView
+                    android:id="@+id/btnuncheckedGeorgia"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:src="@drawable/checkbox_icn"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="#6f7d87"
+                    android:id="@+id/txtGeorgia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/georgia"
+                    android:layout_toRightOf="@+id/btnuncheckedGeorgia"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/robotomedium"
+                    android:layout_marginStart="@dimen/_10sdp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutHelvetica"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_below="@+id/relativeLayoutGeorgia"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_alignParentStart="true">
+
+                <ImageView
+                    android:id="@+id/btnuncheckedHelvetica"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:src="@drawable/checkbox_icn"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="#6f7d87"
+                    android:id="@+id/txtHelvetica"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/helvetica"
+                    android:layout_toRightOf="@+id/btnuncheckedHelvetica"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/robotomedium"
+                    android:layout_marginStart="@dimen/_10sdp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutTimesnewroman"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_below="@+id/relativeLayoutHelvetica"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_alignParentStart="true">
+
+                <ImageView
+                    android:id="@+id/btnuncheckedTimesnewroman"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:src="@drawable/checkbox_icn"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="#6f7d87"
+                    android:id="@+id/txtTimesnewroman"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/timesnewroman"
+                    android:layout_toRightOf="@+id/btnuncheckedTimesnewroman"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/robotomedium"
+                    android:layout_marginStart="@dimen/_10sdp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutverdana"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_below="@+id/relativeLayoutTimesnewroman"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_alignParentStart="true">
+
+                <ImageView
+                    android:id="@+id/btnuncheckedverdana"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:src="@drawable/checkbox_icn"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="#6f7d87"
+                    android:id="@+id/txtverdana"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/verdana"
+                    android:layout_toRightOf="@+id/btnuncheckedverdana"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/robotomedium"
+                    android:layout_marginStart="@dimen/_10sdp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_below="@+id/relativeLayoutverdana"
+                android:layout_centerHorizontal="true">
+
+                <ImageView
+                    android:id="@+id/btn_Cancel"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:src="@drawable/cancel_btn" />
+
+                <ImageView
+                    android:id="@+id/btn_Done"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:src="@drawable/done_btn" />
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

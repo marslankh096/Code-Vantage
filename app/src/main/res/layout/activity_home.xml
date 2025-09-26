@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+        android:layout_above="@id/banner1">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            >
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutone"
+                android:background="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true">
+
+                <ImageView
+                    android:id="@+id/titleimage"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="@dimen/_150sdp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:src="@drawable/homelogo" />
+
+                <ImageView
+                    android:id="@+id/btn_Info"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:src="@drawable/info_icon" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeLayoutone"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:weightSum="3">
+
+                <LinearLayout
+                    android:id="@+id/prompt_click_to_pick_a_file_holder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_100sdp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:src="@drawable/home1" />
+
+<!--                    <TextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:layout_marginTop="@dimen/_5sdp"-->
+<!--                        android:fontFamily="@font/robotoregular"-->
+<!--                        android:gravity="center"-->
+<!--                        android:text="@string/select_files"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="#0d6fdf"-->
+<!--                        android:textSize="@dimen/_14sdp" />-->
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/pdfconvfiles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_height="@dimen/_100sdp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:src="@drawable/home2" />
+<!--                        <ImageView-->
+<!--                            android:layout_width="@dimen/_28sdp"-->
+<!--                            android:layout_height="@dimen/_28sdp"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:gravity="center"-->
+<!--                            android:src="@drawable/pdffilehomeicon"-->
+<!--                            android:tint="@color/white" />-->
+                    </LinearLayout>
+
+<!--                    <TextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:layout_marginTop="@dimen/_5sdp"-->
+<!--                        android:fontFamily="@font/robotoregular"-->
+<!--                        android:gravity="center"-->
+<!--                        android:text="@string/conv"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="#0d6fdf"-->
+<!--                        android:textSize="@dimen/_14sdp" />-->
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/favfiles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_100sdp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:src="@drawable/home3" />
+<!--                    <ImageView-->
+<!--                        android:layout_width="@dimen/_100sdp"-->
+<!--                        android:layout_height="@dimen/_50sdp"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:gravity="center"-->
+<!--                        android:src="@drawable/home3" />-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:layout_marginTop="@dimen/_5sdp"-->
+<!--                        android:fontFamily="@font/robotoregular"-->
+<!--                        android:gravity="center"-->
+<!--                        android:text="@string/favfiles"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="#0d6fdf"-->
+<!--                        android:textSize="@dimen/_14sdp" />-->
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/banner1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center">
+
+        <RelativeLayout
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:gravity="center" />
+    </RelativeLayout>
+
+</RelativeLayout>
+

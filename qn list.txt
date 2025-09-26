@@ -1,0 +1,151 @@
+ChatGPT said:
+
+Aap ne pichle sawalon me bahut saare important Kotlin/Android concepts ke baare me equations, rules aur comparisons maange the.
+Main aapko ek summary list bana kar de raha hoon jisme aapke sare asked equations / rules ek jagah par mil jaayenge.
+
+📘 Equations / Rules / Key Points from Your Questions
+🔹 val vs var
+
+val → Immutable (sirf ek baar assign ho sakta hai)
+
+var → Mutable (multiple times assign ho sakta hai)
+
+Compile-time error agar val ko dobara assign karen.
+
+🔹 Elvis Operator (?:)
+
+a ?: b → agar a null nahi hai → a return karo, warna b.
+
+Example:
+
+val name: String? = null
+val result = name ?: "Default"
+
+🔹 Null Safety
+
+val x: String? = null (nullable type)
+
+Safe call → x?.length
+
+Elvis → x?.length ?: 0
+
+Assertion → x!!.length (❌ crash if null)
+
+🔹 Higher Order Function
+
+Jo function ek aur function parameter leta hai ya return karta hai.
+
+Example:
+
+fun calculate(a: Int, b: Int, op: (Int, Int) -> Int): Int = op(a, b)
+
+🔹 Abstract Class vs Interface
+
+Abstract class → abstract fun sound(), must override in subclass.
+
+Interface → methods default abstract hote hain (no abstract keyword needed).
+
+🔹 Lateinit vs Lazy
+
+lateinit var → manually initialize later (❌ crash agar access before init → UninitializedPropertyAccessException).
+
+val by lazy → first access pe initialize hota hai, cache ho jata hai.
+
+Check initialization:
+
+::propertyName.isInitialized (lateinit)
+
+::propertyName.isInitialized() (lazy)
+
+🔹 Activity vs Fragment Lifecycle
+
+Activity:
+onCreate → onStart → onResume → onPause → onStop → onRestart → onDestroy
+
+Fragment:
+onAttach → onCreate → onCreateView → onViewCreated → onStart → onResume → onPause → onStop → onDestroyView → onDestroy → onDetach
+
+🔹 Intent Types
+
+Explicit → Specific component target (same app).
+
+val intent = Intent(this, SecondActivity::class.java)
+
+
+Implicit → Action-based (system decide karega).
+
+val intent = Intent(Intent.ACTION_SEND)
+
+
+Pending Intent → Dusre apps ko allow karta future action perform karne ke liye (Notifications).
+
+Sticky Intent → Old system broadcast (deprecated).
+
+🔹 Dispatchers
+
+Dispatchers.Default → CPU-bound work
+
+Dispatchers.IO → Network / DB I/O
+
+Dispatchers.Main → UI thread
+
+Dispatchers.Unconfined → Current thread, resume anywhere
+
+🔹 Parallel API Calls (with Flow/Coroutines)
+val userDeferred = async { fetchUser() }
+val postsDeferred = async { fetchPosts() }
+
+val user = userDeferred.await()
+val posts = postsDeferred.await()
+
+🔹 Flow Collection
+
+collect {} → sab values lega
+
+collectLatest {} → sirf latest value lega
+
+first() → pehla value lega
+
+toList() → sab values list me convert karega
+
+🔹 LiveData vs Flow
+Feature	LiveData	Flow
+Lifecycle aware	✅	❌ (needs lifecycleScope)
+Type	Hot stream	Cold stream
+Config change	Auto deliver	Re-collect karna padega
+Transform	map, switchMap	map, filter, flatMap
+🔹 Suspend Function
+
+Coroutine ke andar run hota hai.
+
+Thread block nahi karta.
+
+Sirf coroutine/suspend se call ho sakta hai.
+
+🔹 SupervisorScope
+
+Normal scope me agar ek child fail ho → sab cancel.
+
+supervisorScope me agar ek child fail ho → baaki survive karte hain.
+
+🔹 GlobalScope vs CoroutineScope
+
+GlobalScope → app-level, lifecycle aware nahi, leak risk.
+
+CoroutineScope → structured concurrency, lifecycle ke sath tied.
+
+🔹 Hilt vs Koin
+
+Hilt → Google official, annotation-based, compile-time DI.
+
+Koin → Kotlin DSL, runtime DI, simple to use.
+
+Hilt Module
+@Module
+@InstallIn(SingletonComponent::class)
+object NetworkModule {
+    @Provides fun provideRetrofit(): Retrofit { ... }
+}
+
+
+✅ Ye aapke sare pichle questions ka rule/equations/summary list hai.

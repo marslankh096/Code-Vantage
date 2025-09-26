@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_75sdp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_65sdp"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:layout_marginRight="@dimen/_15sdp"
+        app:cardBackgroundColor="#212121"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp">
+
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/cardViewIcon"
+                android:layout_width="@dimen/_55sdp"
+                android:layout_height="@dimen/_55sdp"
+                android:layout_margin="5dp"
+                android:layout_centerVertical="true">
+
+                <ImageView
+                    android:id="@+id/fileIcon"
+                    android:layout_width="@dimen/_55sdp"
+                    android:layout_height="@dimen/_55sdp"
+                    android:layout_centerInParent="true"
+                    android:padding="@dimen/_10sdp"
+                    android:src="@drawable/file_icn" />
+            </RelativeLayout>
+
+            <TextView
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/white"
+                android:ellipsize="end"
+                android:id="@+id/fileNameTV"
+                android:paddingBottom="@dimen/_5sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="File name"
+                android:maxLines="1"
+                android:layout_toLeftOf="@+id/btnUnfav"
+                android:layout_toRightOf="@+id/cardViewIcon"
+                android:fontFamily="@font/robotoregular" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:layout_below="@+id/fileNameTV"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/btnUnfav"
+                android:layout_toEndOf="@+id/cardViewIcon">
+
+                <TextView
+                    android:textSize="@dimen/_10sdp"
+                    android:textColor="#bcbcbc"
+                    android:ellipsize="end"
+                    android:id="@+id/fileSize"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="File Size"
+                    android:maxLines="1"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/robotoregular" />
+
+                <TextView
+                    android:textSize="@dimen/_10sdp"
+                    android:textColor="#bcbcbc"
+                    android:ellipsize="end"
+                    android:id="@+id/fileDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="File Date"
+                    android:maxLines="1"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/robotoregular" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/btnUnfav"
+                android:padding="3dp"
+                android:visibility="visible"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:src="@drawable/fav_icn"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.appcompat.widget.LinearLayoutCompat>
